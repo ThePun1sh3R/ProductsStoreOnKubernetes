@@ -71,7 +71,7 @@ jobs:
       with:
         terraform_version: ${{ env.TERRAFORM_VERSION }}
     - name: copy ssh key
-      run: echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+      run:  ssh-keygen && echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
     
     - name: Terraform Init
       id: init
