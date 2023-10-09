@@ -6,6 +6,7 @@ resource "null_resource" "ssh_target" {
     type        = "ssh"
     user        = var.ssh_user
     host        = var.ssh_host
+    port        = var.ssh_port
     private_key = file(var.ssh_key)
   }
   provisioner "remote-exec" {
